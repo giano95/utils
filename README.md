@@ -30,5 +30,10 @@ modprobe can-raw
 
 6. Set up the can0 device with 250000 Kb/s bus rate:
 ```
-ip link set can0 up type can bitrate 125000
+sudo ip link set can0 up type can bitrate 250000
+```
+
+7. check if something it's going on on the can0 device we just setup:
+```
+candump can0
 ```
