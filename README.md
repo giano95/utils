@@ -37,3 +37,25 @@ sudo ip link set can0 up type can bitrate 250000
 ```
 candump can0
 ```
+
+# Virtual CAN setup
+
+1. Check if vcan Kernel Module is Loaded:
+```
+lsmod | grep vcan
+```
+
+2. If you see no output, load it manually:
+```
+sudo modprobe vcan
+```
+
+3. Create a vCAN interface using the ip command:
+```
+sudo ip link add dev vcan0 type vcan
+```
+
+4. Bring Up the vCAN Interface:
+```
+sudo ip link set up vcan0
+```
